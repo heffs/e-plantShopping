@@ -357,9 +357,10 @@ function ProductList() {
                                             src={plant.image}
                                             alt={plant.name}
                                         />
-                                        <h3>{plant.name}</h3>
+                                        <h3 className="product-title">{plant.name}</h3>
                                         <p>{plant.description}</p>
                                         <p>Cost: {plant.cost}</p>
+                                        <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
                                     </div>
                                 ))}
                             </div>
