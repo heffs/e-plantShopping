@@ -16,10 +16,9 @@ function ProductList() {
         dispatch(addItem(plant));
         const { name } = plant;
         setAddedToCart((prevAddedToCart) => {
-            return { ...prevAddedToCart, [name]: true }
+            return { ...prevAddedToCart, [name]: true };
         });
     };
-
 
     const plantsArray = [
         {
@@ -310,12 +309,14 @@ function ProductList() {
                         </a>
                     </div>
                     <div>
-                    <div className="cart_quantity_count">{cartCount}</div>{" "}
                         <a
                             href="#"
                             onClick={(e) => handleCartClick(e)}
                             style={styleA}
                         >
+                            <div className="cart_quantity_count">
+                                {cartCount}
+                            </div>{" "}
                             <h1 className="cart">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -359,10 +360,19 @@ function ProductList() {
                                             src={plant.image}
                                             alt={plant.name}
                                         />
-                                        <h3 className="product-title">{plant.name}</h3>
+                                        <h3 className="product-title">
+                                            {plant.name}
+                                        </h3>
                                         <p>{plant.description}</p>
                                         <p>Cost: {plant.cost}</p>
-                                        <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                        <button
+                                            className="product-button"
+                                            onClick={() =>
+                                                handleAddToCart(plant)
+                                            }
+                                        >
+                                            Add to Cart
+                                        </button>
                                     </div>
                                 ))}
                             </div>
